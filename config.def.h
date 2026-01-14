@@ -10,6 +10,8 @@ enum {
  * 'font' X resource properties.
  * See X(7) section Resources and xrdb(1) for more information.
  */
+static const char * const FALLBACK_BACKGROUND = "#323232"; // black
+static const char * const FALLBACK_FOREGROUND = "#ffffff"; // white
 
 #endif
 #ifdef _IMAGE_CONFIG
@@ -89,6 +91,8 @@ static const keymap_t keys[] = {
 	{ ControlMask,  XK_u,             g_unmark_all,         None },
 	{ 0,            XK_N,             g_navigate_marked,    +1 },
 	{ 0,            XK_P,             g_navigate_marked,    -1 },
+	{ ControlMask,  XK_N,             g_navigate_folder,    +1 },
+	{ ControlMask,  XK_P,             g_navigate_folder,    -1 },
 	{ 0,            XK_braceleft,     g_change_gamma,       -1 },
 	{ 0,            XK_braceright,    g_change_gamma,       +1 },
 	{ ControlMask,  XK_g,             g_change_gamma,        0 },
